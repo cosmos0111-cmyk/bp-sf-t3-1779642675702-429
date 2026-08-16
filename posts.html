@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · sf-t3-1779642675702-429</title>
+  <meta name="description" content="sf-t3-1779642675702-429에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-429.maphoshirts.today/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* RESET & BASE */
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ html { font-size: 16px; scroll-behavior: smooth; }
+ body { font-family: 'Impact', 'Arial Black', 'Helvetica Neue', sans-serif; background: #f5f0eb; color: #1a1a1a; line-height: 1.4; }
+
+ /* TYPOGRAPHY – Impact stack + mono for data */
+ h1, h2, h3, h4, h5, h6 { font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; }
+ h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+ h2 { font-size: 2.5rem; margin-bottom: 0.4rem; }
+ h3 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+ p, li, blockquote, .text-mono { font-family: 'Courier New', 'Menlo', monospace; font-size: 1rem; line-height: 1.6; }
+ .text-accent { color: #d4af37; }
+ .text-white { color: #ffffff; }
+ .text-mono-large { font-family: 'Courier New', 'Menlo', monospace; font-size: 1.2rem; }
+
+ /* LAYOUT */
+ .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+ .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+ .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+ .flex-center { display: flex; align-items: center; justify-content: center; }
+ .flex-between { display: flex; align-items: center; justify-content: space-between; }
+ .gap-1 { gap: 1rem; }
+ .gap-2 { gap: 2rem; }
+ .mt-2 { margin-top: 2rem; }
+ .mb-2 { margin-bottom: 2rem; }
+ .py-4 { padding-top: 4rem; padding-bottom: 4rem; }
+ .px-2 { padding-left: 2rem; padding-right: 2rem; }
+
+ /* NAV */
+ nav { background: #1a1a1a; padding: 1rem 2rem; border-bottom: 4px solid #d4af37; }
+ nav a { color: #ffffff; text-decoration: none; font-family: 'Impact', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.5rem 1rem; transition: background 0.2s; }
+ nav a:hover { background: #d4af37; color: #1a1a1a; }
+ .nav-present { display: flex; gap: 2rem; list-style: none; }
+ .hamburger-menu { display: none; cursor: pointer; color: #ffffff; font-size: 2rem; }
+ .tel-link { color: #d4af37; font-weight: bold; }
+
+ /* CARDS */
+ .card { background: #ffffff; border: 3px solid #1a1a1a; padding: 2rem; box-shadow: 8px 8px 0 #1a1a1a; transition: transform 0.2s; }
+ .card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0 #1a1a1a; }
+ .card-dark { background: #1a1a1a; color: #ffffff; border-color: #d4af37; box-shadow: 8px 8px 0 #d4af37; }
+
+ /* BUTTONS */
+ .btn { display: inline-block; padding: 1rem 2.5rem; font-family: 'Impact', sans-serif; font-size: 1.2rem; text-transform: uppercase; text-decoration: none; border: 3px solid #1a1a1a; background: #d4af37; color: #1a1a1a; box-shadow: 4px 4px 0 #1a1a1a; transition: all 0.2s; cursor: pointer; }
+ .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1a1a1a; }
+ .btn-outline { background: transparent; color: #1a1a1a; }
+
+ /* BLOG POST */
+ .blog-header { border-bottom: 4px solid #1a1a1a; padding-bottom: 2rem; margin-bottom: 2rem; }
+ .blog-meta { font-family: 'Courier New', monospace; font-size: 0.9rem; color: #555; margin-bottom: 1rem; }
+ .blog-content h2 { margin-top: 2.5rem; border-left: 6px solid #d4af37; padding-left: 1rem; }
+ .blog-content p { margin-bottom: 1.5rem; }
+ .blog-content ul { margin-bottom: 1.5rem; padding-left: 2rem; font-family: 'Courier New', monospace; }
+ .blog-content li { margin-bottom: 0.5rem; }
+ .blog-content blockquote { border-left: 4px solid #d4af37; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; }
+ .stat-badge { display: inline-block; background: #1a1a1a; color: #d4af37; padding: 0.3rem 0.8rem; font-family: 'Courier New', monospace; font-size: 0.85rem; }
+
+ /* FAQ */
+ .faq-item { border-bottom: 2px solid #1a1a1a; padding: 1.5rem 0; }
+ .faq-question { font-family: 'Impact', sans-serif; font-size: 1.3rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+ .faq-answer { font-family: 'Courier New', monospace; margin-top: 1rem; display: none; }
+ .faq-item.active .faq-answer { display: block; }
+
+ /* FOOTER */
+ footer { background: #1a1a1a; color: #ffffff; padding: 3rem 2rem; border-top: 4px solid #d4af37; }
+ footer a { color: #d4af37; text-decoration: none; }
+
+ /* RESPONSIVE */
+ @media (max-width: 768px) {
+ h1 { font-size: 2.2rem; }
+ h2 { font-size: 1.8rem; }
+ h3 { font-size: 1.3rem; }
+ .grid-2, .grid-3 { grid-template-columns: 1fr; }
+ .nav-present { display: none; flex-direction: column; background: #1a1a1a; position: absolute; top: 100%; left: 0; width: 100%; padding: 1rem; }
+ .nav-present.open { display: flex; }
+ .hamburger-menu { display: block; }
+ nav { position: relative; }
+ .container { padding: 1rem; }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · sf-t3-1779642675702-429">
+  <meta property="og:description" content="sf-t3-1779642675702-429에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-429.maphoshirts.today/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header class="blog-header container"><p class="blog-meta flex-center gap-1">마포 · 신작애니 블로그</p><h1 class="text-mono-large">구글 상위노출 전략, 어떻게 접근해야 할까</h1><span class="stat-badge">체크리스트형 가이드</span></header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-001-1rvtt8h.html">구글 상위노출 대행 현장에서 놓치기 쉬운 포인트를 기록해봤다</a>
+        <p class="post-item__summary">최근 마포 지역을 중심으로 신작 애니메이션 관련 콘텐츠를 구글 검색 결과 상단에 올리려는 수요가 급증하고 있습니다. 하지만 단순히 많은 글을 올리거나 인위적인 링크를 다는 방식으로는 더 이상 검색 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-795.html">구글 상위노출 대행 서비스 안내</a>
+        <p class="post-item__summary">서울 마포구에 위치한 구글 상위노출 대행 서비스는 기업의 온라인 가시성을 높이기 위한 전문적인 솔루션을 제공합니다. 이러한 서비스는 검색 엔진 최적화 기술과 데이터 분석을 결합하여 구글 검색 결과에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0239.html">마포 신작애니 브랜드가 주목받는 법, 구글 상위노출 대행의 역할</a>
+        <p class="post-item__summary">마포 일대에서 신작애니를 준비하는 스튜디오와 기획사들이 해마다 늘어나는 추세다. 콘텐츠의 질만큼 중요한 것이 바로 온라인에서의 가시성 확보다. 아무리 좋은 작품이라도 타깃 관객이 검색 결과에서 쉽게</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0240.html">구글 상위노출 대행, 신작 애니를 마포에서 성공으로 이끌다</a>
+        <p class="post-item__summary">신작 애니는 초기 시청자 확보가 가장 중요한 단계이다. 디지털 마케팅이 급부상한 가운데, 구글 검색에서 상위 노출을 달성하기 위한 전략이 필수적이다. 적절한 키워드 선정과 콘텐츠 최적화가 중요한 출</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0241.html">마포 신작애니 사이트, 구글 상위노출 대행으로 방문자 급증</a>
+        <p class="post-item__summary">애니메이션 전문 사이트는 경쟁이 치열한 만큼 검색 결과 상단에 노출되는 것이 성패를 가른다. 특히 마포 지역을 기반으로 신작 애니정보를 다루는 사이트라면 더욱 그러하다. 단순히 콘텐츠만 좋아서는 구</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0242.html">구글 상위노출 대행의 효과와 전략</a>
+        <p class="post-item__summary">구글 상위노출 대행은 가작이 쉽지 않은 일입니다. 그러나 전문 대행사의 노하우를 활용하면 경쟁사보다 앞서 나갈 수 있고, 잠재 고객이 자연스럽게 찾아오게 됩니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0243.html">신작애니 홍보 전략, 구글 상위노출 대행으로 해결하다</a>
+        <p class="post-item__summary">최근 마포 지역을 중심으로 신작애니에 대한 관심이 빠르게 증가하고 있다. 다양한 장르의 애니메이션이 잇따라 출시되면서 정확한 타겟 소비자에게 도달하는 방법이 무엇보다 중요해졌다. 단순한 홍보만으로는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0244.html">구글 상위노출 대행이 신작애니 마포 성장에 불을 붙이다</a>
+        <p class="post-item__summary">구글 상위노출 대행은 작은 신작애니 스튜디오가 지역 시장에서 눈에 띄게 돕습니다. 검색 결과 상단에 위치하면 시청자와 팬이 자연스럽게 늘어납니다. 이 과정에서 마포 지역의 고유한 매력을 효과적으로 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0245.html">마포 신작애니 제작사를 위한 구글 상위노출 대행 전략</a>
+        <p class="post-item__summary">마포에서 신작애니를 준비 중인 제작사라면 검색 결과 상위 노출이 단순한 마케팅 옵션이 아니라 필수적인 생존 전략이라는 점을 잘 알고 있을 것이다. 아무리 퀄리티 높은 작품이라도 정작 찾는 사람들에게</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0246.html">구글 상위노출 대행으로 신작애니 마포 구역까지 도달하기</a>
+        <p class="post-item__summary">신작애니 현황이 빠르게 변하면서, 초기에 검색 결과에 드러나는 노출이 얼마나 중요한지 새삼 깨닫게 된다. 구글 상위노출 대행을 통해 정해진 키워드로 타깃을 설정하면, 신규 시리즈의 관심도를 크게 끌</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0247.html">마포 신작애니 업체에서 주목할 구글 상위노출 대행 활용법</a>
+        <p class="post-item__summary">마포 지역에서 신작애니 관련 사업을 운영 중이라면 구글 상위노출 대행 서비스를 검토해볼 필요가 있다. 최근 마포 일대에 애니메이션 스튜디오와 관련 업체들이 늘어나면서 온라인 가시성 확보가 중요한 경</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0248.html">구글 상위노출 대행으로 신작애니의 시야를 넓히다</a>
+        <p class="post-item__summary">구글 상위노출 대행은 단순히 링크를 늘리는 것이 아니라, 사용자가 찾는 정보를 정확히 제공하는 전략을 의미합니다. 특히 신작애니 같은 콘텐츠 분야에서는 검색결과에서 눈에 띄는 것이 성장에 핵심이죠.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0249.html">마포 신작애니 흥행의 첫걸음, 구글 상위노출 대행</a>
+        <p class="post-item__summary">마포에서 새롭게 선보이는 애니메이션 작품이 관객을 만나기 위해서는 효과적인 온라인 노출이 필수적이다. 검색 결과 상단에 자리 잡는 것이 브랜드 인지도와 직결되기 때문이다. 아무리 좋은 콘텐츠라도 시</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0250.html">구글 상위노출 대행, 신작애니 마포 시장에서의 새로운 기회</a>
+        <p class="post-item__summary">콘텐츠 산업은 변하고, 검색 엔진에서 눈에 띄는 존재감이 중요하다. 감각적 애니와 스토리가 결합된 신작애니는 매력적이지만 잠재 고객이 가려질 수 있다. 구글 검색 결과 상위에 노출되는 전략이 첫 걸</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0251.html">마포 신작애니 업계, 구글 상위노출 대행으로 경쟁력 확보</a>
+        <p class="post-item__summary">마포와 홍대 일대에서 신작애니를 소개하는 공간이나 이벤트가 늘어나고 있다. 새로운 작품을 찾는 유저들은 대부분 검색을 통해 관련 정보를 먼저 접하게 된다. 이 과정에서 구글 검색 결과 상위에 노출되</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0252.html">마포 신작애니가 펼치는 구글 상위노출 전략</a>
+        <p class="post-item__summary">신작애니는 마포의 도심 속에서 독특한 미디어 환경을 제공한다. 창작자들은 지역 특색을 살려 차별화된 콘텐츠를 만들어 내고 있다. 이처럼 풍부한 문화가 한 곳에 모이면 자연스럽게 지인과의 공유가 활발</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0253.html">마포 신작애니, 구글 상위노출 대행으로 검색 시장에서 존재감 키우기</a>
+        <p class="post-item__summary">마포 지역에서 새로운 애니메이션 IP를 런칭하는 제작사들이 늘고 있다. 하지만 아무리 완성도 높은 작품을 만들어도 검색 결과 상단에 노출되지 않으면 잠재 시청자와 만나기 어렵다. 바로 이 지점에서 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0254.html">마포 신작애니를 위한 구글 상위노출 대행 전략</a>
+        <p class="post-item__summary">마포구의 한창 다채로운 창업가들이 모이는 지역에서, 새로운 애니메이션 콘텐츠를 제작하려는 창작자들이 많습니다. 이들의 목표는 단순히 작품을 만드는 것이 아니라, 구글 상위노출 대행을 통해 더 많은 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-0255.html">마포 신작애니 스튜디오가 구글 상위노출 대행을 선택하는 이유</a>
+        <p class="post-item__summary">마포 지역에서 새롭게 선보이는 신작애니 스튜디오들이 최근 눈에 띄게 늘어나고 있다. 콘텐츠의 질만큼 중요한 것이 바로 온라인에서의 발견 가능성이다. 아무리 좋은 작품을 만들어도 검색 결과에서 묻히면</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0375.html">구글 상위노출 대행 전략 실패를 막는 4</a>
+        <p class="post-item__summary">구글 상위노출 대행 서비스를 찾는 많은 이들이 초기에 범하는 실수는 기술의 본질을 이해하지 못한 채 무작정 자동화 툴에 의존하는 것입니다. 검색 엔진 알고리즘은 사용자의 의도와 콘텐츠의 신뢰성을 지</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
